@@ -1,0 +1,45 @@
+.rightpanel__container {
+  position: fixed;
+  right: 50px;
+  flex: 1;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: white;
+  margin: 20px;
+}
+.rightpanel__form {
+  display: flex;
+  flex-direction: column;
+}
+.rightpanel__form label {
+  font-weight: 500;
+  margin: 5px;
+  font-size: 20px;
+}
+.rightpanel__form input,
+.rightpanel__form textarea {
+  font-size: 18px;
+  padding: 5px 10px;
+  outline: none;
+  border-radius: 5px;
+  background: none;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+}
+.rightpanel__form small {
+  font-weight: 600;
+  margin: 5px 0;
+}
+.rightpanel__form input[type="submit"] {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 10px;
+  color: white;
+  font-weight: 600;
+  border-radius: 20px;
+  background-color: #00b7ff;
+}
+.rightpanel__form small:first-of-type {
+  text-align: right;
+}

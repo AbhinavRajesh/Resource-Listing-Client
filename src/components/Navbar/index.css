@@ -13,27 +13,36 @@
 .navbar__logo {
   flex: 1;
 }
+.navbar__logo a {
+  text-decoration: none;
+  color: black;
+}
+.navbar__logo a h1 {
+  font-size: 40px;
+  font-weight: 500;
+}
 .navbar__search {
   flex: 2;
-  border-radius: 20px;
+  border-radius: 30px;
   border: 1px solid black;
   padding: 0px 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 7px 10px;
 }
 .navbar__search input {
   width: 100%;
   outline: none;
   font-family: "Poppins", sans-serif;
-  padding: 7px 15px;
+  padding: 10px 20px;
   border: none;
   font-size: 18px;
   background: none;
 }
 .navbar__search i {
   padding: 7px 15px;
-  font-size: 18px;
+  font-size: 24px;
 }
 .navbar__links {
   padding-left: 40px;

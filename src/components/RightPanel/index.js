@@ -23,7 +23,12 @@ const RightPanel = () => {
       }
     );
     if (data.error) alert(data.error);
-    if (data.token) updateToken(data.token);
+    if (data.token) {
+      e.target[0].value = "";
+      e.target[1].value = "";
+      e.target[2].value = "";
+      updateToken(data.token);
+    }
   };
 
   return (
@@ -43,7 +48,7 @@ const RightPanel = () => {
           placeholder="Share references, books, tutorials, links, etc. "
           rows="9"
           style={{ resize: "none" }}
-          maxLength="350"
+          maxLength="700"
           onChange={handleResourceChange}
           required
         ></textarea>

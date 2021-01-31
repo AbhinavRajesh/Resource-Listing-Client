@@ -8,6 +8,7 @@ import LoggedInRoute from "./Routes/LoggedInRoute";
 import LoggedOutRoute from "./Routes/LoggedOutRoute";
 
 import "./App.css";
+import Profile from "./components/Profile";
 
 function App() {
   return (
@@ -19,9 +20,10 @@ function App() {
               <LoggedOutRoute exact path="/auth" component={Auth} />
             </Switch>
           </Route>
-          <Route path={["/"]}>
+          <Route path={["/", "/profile"]}>
             <Switch>
               <LoggedInRoute exact path="/" component={Home} />
+              <LoggedInRoute exact path="/profile" component={Profile} />
             </Switch>
           </Route>
         </BrowserRouter>

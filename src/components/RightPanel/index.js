@@ -52,7 +52,7 @@ const RightPanel = () => {
           onChange={handleResourceChange}
           required
         ></textarea>
-        <small>{characterLength}/350</small>
+        <small>{characterLength}/700</small>
         <label htmlFor="tags">Tags</label>
         <input
           type="text"

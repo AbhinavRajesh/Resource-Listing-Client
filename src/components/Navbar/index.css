@@ -52,7 +52,7 @@
   display: flex;
   list-style: none;
   justify-content: space-between;
-  font-size: 18px;
+  font-size: 20px;
 }
 .navbar__links ul a {
   display: flex;

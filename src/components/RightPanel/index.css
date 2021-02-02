@@ -22,6 +22,7 @@
   padding: 5px 10px;
   outline: none;
   border-radius: 5px;
+  border: 1px solid gray;
   background: none;
   font-weight: 400;
   font-family: "Poppins", sans-serif;
@@ -42,4 +43,10 @@
 }
 .rightpanel__form small:first-of-type {
   text-align: right;
+}
+
+@media screen and (max-width: 1024px) {
+  .rightpanel__container {
+    display: none;
+  }
 }

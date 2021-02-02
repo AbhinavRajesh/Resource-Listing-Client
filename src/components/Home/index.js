@@ -8,19 +8,24 @@ import RightPanel from "../RightPanel";
 
 import "./index.css";
 
-const Home = () => {
+const Home = (props) => {
   const [posts, setPosts] = useState([]);
   const [search, setSearch] = useState("");
-  const { user, token } = useContext(AuthContext);
+  const { token } = useContext(AuthContext);
 
-  useEffect(async () => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/posts`, {
-      headers: { token: token },
-    });
-    if (data.error) setPosts(data.error);
-    if (data.posts) setPosts(data.posts);
-    console.log(data.posts);
-  }, [token]);
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_API_URL}/posts`,
+        {
+          headers: { token: token },
+        }
+      );
+      if (data.error) setPosts(data.error);
+      if (data.posts) setPosts(data.posts);
+    };
+    fetchPosts();
+  }, [token, props.location]);
 
   const handleSearch = async (e) => {
     e.preventDefault();

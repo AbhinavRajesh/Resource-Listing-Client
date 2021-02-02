@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState, useEffect, useContext } from "react";
-import { Redirect } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthContext";
 
 import Navbar from "../Navbar";
@@ -10,18 +9,21 @@ import "./index.css";
 const Profile = (props) => {
   const { user, token, updateToken } = useContext(AuthContext);
   const [posts, setPosts] = useState([]);
-  useEffect(async () => {
-    const { data } = await axios.get(
-      `${process.env.REACT_APP_API_URL}/user/posts`,
-      {
-        headers: {
-          token: token,
-        },
-      }
-    );
-    if (data.error) alert(data.error);
-    if (data.posts) setPosts(data.posts);
-  }, []);
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_API_URL}/user/posts`,
+        {
+          headers: {
+            token: token,
+          },
+        }
+      );
+      if (data.error) alert(data.error);
+      if (data.posts) setPosts(data.posts);
+    };
+    fetchPosts();
+  }, [token]);
   const handleLogout = () => {
     localStorage.removeItem("token");
     updateToken("");

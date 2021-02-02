@@ -21,7 +21,7 @@ const Auth = (props) => {
       props.history.push("/");
     }
     if (error) alert(error);
-  }, [props.location, props.history]);
+  }, [props.location, props.history, updateToken]);
 
   const toggleSignUp = () => {
     setIsSignup((prev) => (prev = !prev));
@@ -41,7 +41,7 @@ const Auth = (props) => {
         loginDetails
       );
       if (data.token) updateToken(data.token);
-      if (data.error) alert(data.                                   error);
+      if (data.error) alert(data.error);
     } else {
       // SIGNUP
       if (e.target[3].value !== e.target[4].value) {

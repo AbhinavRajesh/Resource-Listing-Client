@@ -80,3 +80,35 @@
   padding-right: 10px;
   font-weight: 600;
 }
+
+@media screen and (max-width: 1024px) {
+  .navbar__container {
+    padding: 10px 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .navbar__links ul a:last-of-type li {
+    display: none;
+  }
+  .navbar__links ul a:last-of-type {
+    padding: 0;
+  }
+  .navbar__search {
+    float: 1;
+  }
+  .navbar__links {
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navbar__container {
+    flex-direction: column;
+  }
+  .navbar__links ul a:last-of-type {
+    margin: 10px;
+  }
+  .navbar__search {
+    padding: 0;
+  }
+}

@@ -72,3 +72,22 @@
   font-size: 20px;
   padding: 5px 10px;
 }
+
+@media screen and (max-width: 768px) {
+  .profile__left img {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .profile__container {
+    padding-top: 150px;
+  }
+  .profile__section {
+    padding: 20px;
+    flex-direction: column;
+  }
+  .profile__right {
+    padding: 20px 0;
+  }
+}

@@ -145,6 +145,10 @@
     font-size: 16px;
   }
   .postcard__rightbottom {
+    flex-direction: column;
     font-size: 10px;
+  }
+  .postcard__rightbottom p {
+    padding: 0;
   }
 }

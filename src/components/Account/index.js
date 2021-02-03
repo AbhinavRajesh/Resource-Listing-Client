@@ -30,7 +30,6 @@ const Account = (props) => {
   return (
     <div className="profile__container">
       <Navbar />
-      {console.log(account)}
       <div className="profile__main">
         {account ? (
           <>
@@ -71,10 +70,10 @@ const Account = (props) => {
                 tags={post.tags}
                 author={post.author}
                 image={post.image}
-                comments={post.comments}
-                upvotes={post.upvotes}
                 links={post.links}
                 userId={post.userId}
+                id={post._id}
+                saved={post.saved}
               />
             ))}
           </>

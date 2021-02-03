@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthContext";
 
 import Navbar from "../Navbar";
@@ -63,6 +64,10 @@ const Profile = (props) => {
               <h3>Posts:</h3>
               <p>{user.posts?.length}</p>
             </div>
+            <Link to="/savedPost">
+              <i class="fas fa-bookmark"></i>
+              Saved Posts
+            </Link>
           </form>
         </div>
         {posts.map((post) => (

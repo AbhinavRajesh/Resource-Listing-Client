@@ -8,7 +8,6 @@ const Navbar = ({ setSearch, handleSearch }) => {
   const { user } = useContext(AuthContext);
 
   const handleChange = (e) => setSearch(e.target.value);
-
   return (
     <div className="navbar__container">
       <div className="navbar__logo">
@@ -16,10 +15,16 @@ const Navbar = ({ setSearch, handleSearch }) => {
           <h1>Aspire</h1>
         </Link>
       </div>
-      <form className="navbar__search" onSubmit={handleSearch}>
-        <input type="text" onChange={handleChange} placeholder="Search tags" />
-        <i type="submit" className="fas fa-search" onClick={handleSearch}></i>
-      </form>
+      {window.location.pathname === "/" && (
+        <form className="navbar__search" onSubmit={handleSearch}>
+          <input
+            type="text"
+            onChange={handleChange}
+            placeholder="Search tags"
+          />
+          <i type="submit" className="fas fa-search" onClick={handleSearch}></i>
+        </form>
+      )}
       <div className="navbar__links">
         <ul>
           <Link to="/">

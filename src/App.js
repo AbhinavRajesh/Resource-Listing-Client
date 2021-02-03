@@ -11,6 +11,7 @@ import "./App.css";
 import Profile from "./components/Profile";
 import Account from "./components/Account";
 import AddPost from "./components/AddPost";
+import SavedPost from "./components/SavedPosts";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               <LoggedInRoute exact path="/profile" component={Profile} />
               <LoggedInRoute exact path="/addPost" component={AddPost} />
               <LoggedInRoute exact path="/account/:id" component={Account} />
+              <LoggedInRoute exact path="/savedPost" component={SavedPost} />
             </Switch>
           </Route>
         </BrowserRouter>

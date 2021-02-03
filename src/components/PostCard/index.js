@@ -1,7 +1,9 @@
 import Microlink from "@microlink/react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
+import { AuthContext } from "../../Context/AuthContext";
 import "./index.css";
 
 const PostCard = ({
@@ -13,12 +15,14 @@ const PostCard = ({
   image,
   userId,
   links,
+  id,
+  saved,
 }) => {
   const [resourceUpdated, setResourceUpdated] = useState("");
+  const [postSaved, setPostSaved] = useState(saved);
+  const { token } = useContext(AuthContext);
+
   useEffect(() => {
-    // let parts = description.split(
-    //   /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi
-    // );
     let parts = description.split(
       /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#%?=~_|!:,.;]*[-A-Z0-9+&@#%=~_|])/gi
     );
@@ -33,8 +37,22 @@ const PostCard = ({
   }, [description]);
 
   const randomColorCode = () => `hsla(${Math.random() * 360}, 100%, 85%, 1)`;
+
+  const toggleSaved = async () => {
+    const { data } = await axios.get(
+      `${process.env.REACT_APP_API_URL}/post/toggleSaved/${id}`,
+      {
+        headers: {
+          token: token,
+        },
+      }
+    );
+    if (data.message) setPostSaved(!postSaved);
+    if (data.error) alert(data.error);
+  };
+
   return (
-    <div className="postcard__container">
+    <div className="postcard__container" data-key={id}>
       <div className="postcard__main">
         <div className="postcard__top">
           <div className="postcard__left">
@@ -70,6 +88,11 @@ const PostCard = ({
               <Microlink url={link} />
             ))}
           </div>
+        )}
+        {postSaved ? (
+          <i className="fas fa-bookmark" onClick={toggleSaved}></i>
+        ) : (
+          <i className="far fa-bookmark" onClick={toggleSaved}></i>
         )}
       </div>
     </div>

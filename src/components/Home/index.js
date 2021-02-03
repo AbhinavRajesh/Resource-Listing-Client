@@ -40,7 +40,6 @@ const Home = (props) => {
     if (data.posts) setPosts(data.posts);
     if (data.error) alert(data.error);
   };
-
   return (
     <div className="home__container">
       <Navbar handleSearch={handleSearch} setSearch={setSearch} />
@@ -50,18 +49,20 @@ const Home = (props) => {
             ? posts.error
               ? posts
               : posts.map((post) => (
-                  <PostCard
-                    title={post.title}
-                    description={post.resource}
-                    date={new Date(post.createdAt).toLocaleString()}
-                    tags={post.tags}
-                    author={post.author}
-                    image={post.image}
-                    comments={post.comments}
-                    upvotes={post.upvotes}
-                    links={post.links}
-                    userId={post.userId}
-                  />
+                  <>
+                    <PostCard
+                      title={post.title}
+                      description={post.resource}
+                      date={new Date(post.createdAt).toLocaleString()}
+                      tags={post.tags}
+                      author={post.author}
+                      image={post.image}
+                      links={post.links}
+                      userId={post.userId}
+                      id={post._id}
+                      saved={post.saved}
+                    />
+                  </>
                 ))
             : "Loading..."}
         </div>

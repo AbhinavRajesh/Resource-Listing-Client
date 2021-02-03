@@ -25,6 +25,11 @@ const Navbar = ({ setSearch, handleSearch }) => {
           <Link to="/">
             <li>Home</li>
           </Link>
+          {window.innerWidth <= 1024 && (
+            <Link to="/addPost">
+              <li>Add Post</li>
+            </Link>
+          )}
           <Link to="/profile">
             <img src={user?.image} alt="" />
             <li>{user?.displayName}</li>

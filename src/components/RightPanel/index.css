@@ -45,6 +45,13 @@
   text-align: right;
 }
 
+@media screen and (max-width: 1200px) {
+  .rightpanel__container {
+    width: 400px;
+    right: 30px;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .rightpanel__container {
     display: none;

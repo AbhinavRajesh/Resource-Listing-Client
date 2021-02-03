@@ -10,6 +10,7 @@ import LoggedOutRoute from "./Routes/LoggedOutRoute";
 import "./App.css";
 import Profile from "./components/Profile";
 import Account from "./components/Account";
+import AddPost from "./components/AddPost";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Switch>
               <LoggedInRoute exact path="/" component={Home} />
               <LoggedInRoute exact path="/profile" component={Profile} />
+              <LoggedInRoute exact path="/addPost" component={AddPost} />
               <LoggedInRoute exact path="/account/:id" component={Account} />
             </Switch>
           </Route>

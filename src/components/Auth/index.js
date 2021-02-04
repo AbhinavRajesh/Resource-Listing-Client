@@ -10,8 +10,9 @@ const Auth = (props) => {
   const [isSignup, setIsSignup] = useState(false);
   const { updateToken, token } = useContext(AuthContext);
 
-  const GOOGLE_SIGNIN_URL = "http://localhost:5000/auth/google";
-  const EMAIL_AUTH_URL = "http://localhost:5000/auth";
+  const GOOGLE_SIGNIN_URL =
+    "http://resource-listing.azurewebsites.net/auth/google";
+  const EMAIL_AUTH_URL = "http://resource-listing.azurewebsites.net/auth";
 
   useEffect(() => {
     console.log(props.location);

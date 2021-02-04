@@ -7,7 +7,7 @@ export const AuthProvider = (props) => {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [user, setUser] = useState({});
 
-  const URL = "http://resource-listing.azurewebsites.net/auth/user";
+  const URL = "https://resource-listing.azurewebsites.net/auth/user";
   useEffect(() => {
     const newToken = localStorage.getItem("token");
     if (newToken) setToken(newToken);

@@ -1,4 +1,4 @@
-import { HashRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Auth from "./components/Auth";
 import Home from "./components/Home";
@@ -17,7 +17,7 @@ function App() {
   return (
     <AuthProvider>
       <div className="App">
-        <HashRouter>
+        <BrowserRouter>
           <Route path={["/auth"]}>
             <Switch>
               <LoggedOutRoute exact path="/auth" component={Auth} />
@@ -32,7 +32,7 @@ function App() {
               <LoggedInRoute exact path="/savedPost" component={SavedPost} />
             </Switch>
           </Route>
-        </HashRouter>
+        </BrowserRouter>
       </div>
     </AuthProvider>
   );

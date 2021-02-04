@@ -37,16 +37,18 @@ const Home = (props) => {
         },
       }
     );
+    console.log("HERE: ", data.error);
     if (data.posts) setPosts(data.posts);
     if (data.error) alert(data.error);
   };
+
   return (
     <div className="home__container">
       <Navbar handleSearch={handleSearch} setSearch={setSearch} />
       <div className="home__main">
         <div className="home__section">
           {posts
-            ? posts.error
+            ? posts.includes("Error")
               ? posts
               : posts.map((post) => (
                   <>

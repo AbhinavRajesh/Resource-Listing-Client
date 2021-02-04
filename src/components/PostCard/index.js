@@ -24,7 +24,7 @@ const PostCard = ({
 
   useEffect(() => {
     let parts = description.split(
-      /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#%?=~_|!:,.;]*[-A-Z0-9+&@#%=~_|])/gi
+      /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi
     );
     parts = parts.filter((part) => part !== "https");
     for (let i = 1; i < parts.length; i += 2)
